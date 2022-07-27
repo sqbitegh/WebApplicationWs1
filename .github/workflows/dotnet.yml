@@ -30,13 +30,14 @@ jobs:
 #      uses: actions/setup-dotnet@v2
 #      with:
 #        dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: dotnet restore -p:TargetFramework=${{ matrix.tfm }}
+    
+    #- name: Restore dependencies
+    #  run: dotnet restore -p:TargetFramework=${{ matrix.tfm }}
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build -f=${{ matrix.tfm }}
 #    - name: Build
 #      run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal -f=${{ matrix.tfm }}
 #    - name: Test
 #      run: dotnet test --no-restore --verbosity normal -f=${{ matrix.tfm }}
