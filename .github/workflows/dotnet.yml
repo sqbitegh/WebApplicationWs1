@@ -10,11 +10,6 @@ jobs:
   build:
     name: dotnet tests
     runs-on: ubuntu-latest
-    strategy:
-     matrix:
-        include:
-        - dotnet-version: '3.1.x'
-          tfm: 'netcoreapp3.1'
 
     steps:
     - uses: actions/checkout@v3
@@ -28,5 +23,4 @@ jobs:
       run: dotnet build
     
     - name: Test
-      #run: dotnet test --no-build --verbosity normal -f=${{ matrix.tfm }}
       run: dotnet test --no-build --verbosity normal
