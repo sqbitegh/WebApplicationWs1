@@ -31,7 +31,7 @@ jobs:
           include-prerelease: true
 
     - name: Build with dotnet
-      run: dotnet build --configuration Release
+      run: dotnet build
 #    - uses: actions/checkout@v3   
 #    - name: Setup .NET
 #      uses: actions/setup-dotnet@v2
@@ -44,7 +44,7 @@ jobs:
     #  run: dotnet build -f=${{ matrix.tfm }}
 #    - name: Build
 #      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
 #    - name: Test
-#      run: dotnet test --no-restore --verbosity normal -f=${{ matrix.tfm }}
+#      run: dotnet test --no-build --verbosity normal
+    - name: Test
+      run: dotnet test --no-build --verbosity normal -f=${{ matrix.tfm }}
