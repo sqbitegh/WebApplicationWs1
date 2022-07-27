@@ -15,15 +15,9 @@ jobs:
         include:
         - dotnet-version: '3.1.x'
           tfm: 'netcoreapp3.1'
-    #  matrix:
-    #    dotnet-version: ['3.1.x' ]
 
     steps:
     - uses: actions/checkout@v3
-    #- name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
-    #  uses: actions/setup-dotnet@v1.7.2
-    #  with:
-    #    dotnet-version: ${{ matrix.dotnet-version }}
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v1
       with:
@@ -32,19 +26,7 @@ jobs:
 
     - name: Build with dotnet
       run: dotnet build
-#    - uses: actions/checkout@v3   
-#    - name: Setup .NET
-#      uses: actions/setup-dotnet@v2
-#      with:
-#        dotnet-version: 6.0.x
     
-    #- name: Restore dependencies
-    #  run: dotnet restore -p:TargetFramework=${{ matrix.tfm }}
-    #- name: Build
-    #  run: dotnet build -f=${{ matrix.tfm }}
-#    - name: Build
-#      run: dotnet build --configuration Release --no-restore
-#    - name: Test
-#      run: dotnet test --no-build --verbosity normal
     - name: Test
-      run: dotnet test --no-build --verbosity normal -f=${{ matrix.tfm }}
+      #run: dotnet test --no-build --verbosity normal -f=${{ matrix.tfm }}
+      run: dotnet test --no-build --verbosity normal
