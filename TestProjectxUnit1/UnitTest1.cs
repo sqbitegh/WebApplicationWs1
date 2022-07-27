@@ -1,4 +1,4 @@
-using WebApplicationWs1.Pages;
+using WebApplicationNC1.Models;
 
 namespace TestProjectxUnit1
 {
@@ -13,8 +13,8 @@ namespace TestProjectxUnit1
         [Fact]
         public void Test2()
         {
-            var em = new ErrorModel(null);
-            em.NotFound();
+            var em = new ErrorViewModel();
+            em.RequestId = "undef";
             Assert.True(true);
 
 
